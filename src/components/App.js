@@ -3,6 +3,7 @@ import { Todos } from "./Todos";
 import { Users } from "./Users";
 import { useDispatch } from "react-redux";
 import {loadTodos, loadUsers} from "../redux/action";
+import {Route, Routes} from "react-router-dom";
 
 const App = () => {
 
@@ -15,7 +16,9 @@ const App = () => {
     return (
         <div className="container">
             <Users/>
-            <Todos/>
+            <Routes>
+                <Route path="/:id?" element={<Todos/>}/>
+            </Routes>
         </div>
     );
 };
